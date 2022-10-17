@@ -1,6 +1,7 @@
 // packages needed
 const fs = require('fs');
 const inquirer = require('inquirer');
+const { resolve } = require('path');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // array of questions
@@ -64,8 +65,21 @@ const questions = [
         }
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function to write README file
+const writeToFile = fileData => {
+    return new Promise((resolve, reject) => {
+        fs.writeToFile('./README.md', fileData, err => {
+            if (err) {
+                reject(err)
+                return;
+            }
+            resolve({
+                ok: true,
+                message: console.log('Your README has been successfully created!')
+            });
+        });
+    });
+};
 
 // TODO: Create a function to initialize app
 function init() {}
