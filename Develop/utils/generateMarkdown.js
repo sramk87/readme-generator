@@ -54,12 +54,31 @@ function generateMarkdown(data) {
   ## ${renderLicenseSection(data.license)} ${renderLicenseBadge(data.license)}
   ### ${renderLicenseLink(data.license)}
   ## Table of Contents:
-  ###  * [Description](#description)
-  ###  * [License](#license)
-  ###  * [Repo](#repo)
+  ### * [Description](#description)
+  ### * [Installation](#installation)
+  ### * [Usage](#usage)
+  ### * [Contribution](#contribution)
+  ### * [Test](#test)
+  ### * [License](#license)
+  ### * [Repo](#repo)
 
   ## Description:
   ### ${data.desription}
+
+  ## Installation:
+  ### ${data.installation}
+
+  ## Usage:
+  ### ${data.usage}
+
+  ## Contribution:
+  ### ${data.contribution}
+
+  ## Test:
+  ### ${data.test}
+
+  ## License:
+  ### ${data.license}
 
   ## Repo:
   ### ${data.repo}

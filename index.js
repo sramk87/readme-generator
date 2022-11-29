@@ -35,6 +35,62 @@ const questions = [
         }
     },
     {
+        type: 'input',
+        name: 'installation',
+        message: 'What are the instructions for installing your project?',
+        validate: projectTitle => {
+            if (projectTitle) {
+                return true;
+            }
+            else {
+                console.log('Please enter installation instructions.')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Usage info?',
+        validate: projectTitle => {
+            if (projectTitle) {
+                return true;
+            }
+            else {
+                console.log('Please enter usage information for your project.')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'contribution',
+        message: 'Contribution guidelines?',
+        validate: projectTitle => {
+            if (projectTitle) {
+                return true;
+            }
+            else {
+                console.log('Please enter contribution guidelines.')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'test',
+        message: 'Test instructions?',
+        validate: projectTitle => {
+            if (projectTitle) {
+                return true;
+            }
+            else {
+                console.log('Please enter test instructions.')
+                return false;
+            }
+        }
+    },
+    {
         type: 'list',
         name: 'license',
         message: 'What license does your project use?',
@@ -68,7 +124,7 @@ const questions = [
 // function to write README file
 const writeToFile = fileData => {
     return new Promise((resolve, reject) => {
-        fs.writeToFile('./README.md', fileData, err => {
+        writeToFile('./README.md', fileData, err => {
             if (err) {
                 reject(err)
                 return;
@@ -86,12 +142,11 @@ function init() {
     inquirer.prompt(questions)
         .then(function(answer) {
             console.log(answer);
-        var fileContent = generateMarkdown(answer);
-        writeToFile(fileContent)
+        var fileData = generateMarkdown(answer);
+        writeToFile(fileData)
         });
 }
 
-// Function call to initialize app
 init()
 
 module.exports = questions;
