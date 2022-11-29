@@ -1,5 +1,4 @@
 const fs = require('fs');
-const index = require('../index');
 const inquirer = require('inquirer');
 
 /* function that returns a license badge based on which license is passed in, 

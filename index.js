@@ -2,7 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const { resolve } = require('path');
-const generateMarkdown = require('./utils/generateMarkdown');
+const generateMarkdown = require('./Develop/utils/generateMarkdown');
 
 // array of questions
 const questions = [
