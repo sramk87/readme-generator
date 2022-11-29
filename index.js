@@ -1,4 +1,3 @@
-// packages needed
 const fs = require('fs');
 const inquirer = require('inquirer');
 const { resolve } = require('path');
@@ -126,7 +125,7 @@ const writeToFile = fileData => {
     return new Promise((resolve, reject) => {
         writeToFile('./README.md', fileData, err => {
             if (err) {
-                reject(err)
+                reject(err);
                 return;
             }
             resolve({
