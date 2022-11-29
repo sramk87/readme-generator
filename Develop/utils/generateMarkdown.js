@@ -59,10 +59,10 @@ function generateMarkdown(data) {
   ###  * [Repo](#repo)
 
   ## Description:
-  ### ${answer.desription}
+  ### ${data.desription}
 
   ## Repo:
-  ### ${answer.repo}
+  ### ${data.repo}
 `;
 }
 
