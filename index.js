@@ -122,19 +122,14 @@ const questions = [
 
 // function to write README file
 const writeToFile = fileData => {
-    return new Promise((resolve, reject) => {
         writeToFile('./README.md', fileData, err => {
             if (err) {
-                reject(err);
-                return;
+                console.log(err);
             }
-            resolve({
-                ok: true,
-                message: console.log('Your README has been successfully created!')
+            console.log('Your README has been successfully created!')
             });
-        });
-    });
-};
+}
+
 
 // function to initialize app
 function init() {
