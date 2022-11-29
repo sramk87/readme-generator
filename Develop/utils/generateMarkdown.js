@@ -51,8 +51,8 @@ function generateMarkdown(data) {
 
   return`
   # ${data.title}
-  ## ${renderLicenseSection(answer.license)} ${renderLicenseBadge(answer.license)}
-  ### ${renderLicenseLink(answer.license)}
+  ## ${renderLicenseSection(data.license)} ${renderLicenseBadge(data.license)}
+  ### ${renderLicenseLink(data.license)}
   ## Table of Contents:
   ###  * [Description](#description)
   ###  * [License](#license)

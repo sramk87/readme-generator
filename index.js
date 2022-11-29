@@ -93,14 +93,5 @@ function init() {
 
 // Function call to initialize app
 init()
-.then(userInput => {
-    return generateMarkdown(userInput);
-})
-.then(dataContent => {
-    return writeToFile(dataContent);
-})
-.catch(err => {
-    console.log(err);
-})
 
 module.exports = questions;
