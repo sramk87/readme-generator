@@ -85,10 +85,22 @@ const writeToFile = fileData => {
 function init() {
     inquirer.prompt(questions)
         .then(function(answer) {
-        var fileData = generateMarkdown(answer);
+            console.log(answer);
+        var fileContent = generateMarkdown(answer);
         writeToFile(fileContent)
         });
 }
 
 // Function call to initialize app
-init();
+init()
+.then(userInput => {
+    return generateMarkdown(userInput);
+})
+.then(dataContent => {
+    return writeToFile(dataContent);
+})
+.catch(err => {
+    console.log(err);
+})
+
+module.exports = questions;

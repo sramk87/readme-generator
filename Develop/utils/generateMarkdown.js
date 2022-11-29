@@ -37,19 +37,33 @@ function renderLicenseLink(license) {
 /* function that returns the license section of README
 if there is no license, return an empty string */
 function renderLicenseSection(license) {
-  let licenseSection = ''
+  let licenseAns = ''
   if(license === 'None') {
-    licenseSection = ''
+    licenseAns = ''
   } else {
-    licenseSection =
+    licenseAns =
     `License: ${license} `
   }
-  return licenseSection;
+  return licenseAns;
 }
 
 // function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+
+  return`
+  # ${data.title}
+  ## ${renderLicenseSection(answer.license)} ${renderLicenseBadge(answer.license)}
+  ### ${renderLicenseLink(answer.license)}
+  ## Table of Contents:
+  ###  * [Description](#description)
+  ###  * [License](#license)
+  ###  * [Repo](#repo)
+
+  ## Description:
+  ### ${answer.desription}
+
+  ## Repo:
+  ### ${answer.repo}
 `;
 }
 
