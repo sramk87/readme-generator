@@ -81,8 +81,14 @@ const writeToFile = fileData => {
     });
 };
 
-// TODO: Create a function to initialize app
-function init() {}
+// function to initialize app
+function init() {
+    inquirer.prompt(questions)
+        .then(function(answer) {
+        var fileData = generateMarkdown(answer);
+        writeToFile(fileContent)
+        });
+}
 
 // Function call to initialize app
 init();
